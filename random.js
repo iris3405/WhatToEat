@@ -6,8 +6,8 @@
     $("#start").click(function () {
         var list = $("#list").val().replace(/ +/g, " ").replace(/^ | $/g, "").split(" ");
         if (!run) {
-            heading.html(heading.html().replace("吃这个！", "吃什么？"));
-            $(this).val("停止");
+            heading.html(heading.html().replace("오늘은 이거!", "무엇을 먹을까?"));
+            $(this).val("정지");
             timer = setInterval(function () {
                 var r = Math.ceil(Math.random() * list.length),
                     food = list[r - 1];
@@ -28,8 +28,8 @@
             }, 50);
             run = 1;
         } else {
-           heading.html(heading.html().replace("吃什么？", "吃这个！"));
-            $(this).val("不行，换一个");
+           heading.html(heading.html().replace("무엇을 먹을까?", "오늘은 이거!"));
+            $(this).val("다른메뉴");
             clearInterval(timer);
             run = 0;
         };
