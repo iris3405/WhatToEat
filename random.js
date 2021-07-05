@@ -6,7 +6,7 @@
     $("#start").click(function () {
         var list = $("#list").val().replace(/ +/g, " ").replace(/^ | $/g, "").split(" ");
         if (!run) {
-            heading.html(heading.html().replace("오늘의 메뉴는"));
+            heading.html(heading.html().replace("무엇을먹을까", "오늘의 메뉴는"));
             $(this).val("정지");
             timer = setInterval(function () {
                 var r = Math.ceil(Math.random() * list.length),
@@ -28,7 +28,7 @@
             }, 50);
             run = 1;
         } else {
-           heading.html(heading.html().replace("오늘의 메뉴는"));
+           heading.html(heading.html().replace("무엇을먹을까","오늘의 메뉴는"));
             $(this).val("다른메뉴");
             clearInterval(timer);
             run = 0;
